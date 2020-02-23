@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:eyeless.Styles">
+
+    <Color x:Key="main1">#2F2B3F</Color>
+    <SolidColorBrush  x:Key="hadder" Color="{StaticResource main1}" />
+
+    <Color x:Key="main2">#2B263D</Color>
+    <SolidColorBrush  x:Key="menu" Color="{StaticResource main2}" />
+
+    <Color x:Key="main3">#221F2E</Color>
+    <SolidColorBrush  x:Key="background" Color="{StaticResource main3}" />
+
+    <Color x:Key="fontMenuCollor1">#524F62</Color>
+    <SolidColorBrush  x:Key="fontMenu" Color="{StaticResource fontMenuCollor1}" />
+
+    <Color x:Key="fontMenuCollor2">#DEDCEC</Color>
+    <SolidColorBrush  x:Key="fontMenu2" Color="{StaticResource fontMenuCollor2}" />
+
+    <Color x:Key="rectangleColor">#FCFAFF</Color>
+    <SolidColorBrush  x:Key="rectangle" Color="{StaticResource rectangleColor}" />
+
+    
+
+</ResourceDictionary>
