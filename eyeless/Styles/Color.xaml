@@ -11,15 +11,19 @@
     <Color x:Key="main3">#221F2E</Color>
     <SolidColorBrush  x:Key="background" Color="{StaticResource main3}" />
 
-    <Color x:Key="fontMenuCollor1">#524F62</Color>
-    <SolidColorBrush  x:Key="fontMenu" Color="{StaticResource fontMenuCollor1}" />
+    <Color x:Key="fontMenuColor1">#524F62</Color>
+    <SolidColorBrush  x:Key="fontMenu" Color="{StaticResource fontMenuColor1}" />
 
-    <Color x:Key="fontMenuCollor2">#DEDCEC</Color>
-    <SolidColorBrush  x:Key="fontMenu2" Color="{StaticResource fontMenuCollor2}" />
+    <Color x:Key="fontMenuColor2">#DEDCEC</Color>
+    <SolidColorBrush  x:Key="fontMenu2" Color="{StaticResource fontMenuColor2}" />
 
     <Color x:Key="rectangleColor">#FCFAFF</Color>
     <SolidColorBrush  x:Key="rectangle" Color="{StaticResource rectangleColor}" />
 
-    
+    <Color x:Key="fontGameColor">#564C3A</Color>
+    <SolidColorBrush  x:Key="fontGame1" Color="{StaticResource fontGameColor}" />
+
+    <Color x:Key="ScoreColor">#81799F</Color>
+    <SolidColorBrush  x:Key="ScoreC" Color="{StaticResource ScoreColor}" />
 
 </ResourceDictionary>

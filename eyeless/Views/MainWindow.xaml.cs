@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace eyeless
         public MainWindow()
         {
             InitializeComponent();
+            NavigationSetup();
+        }
+
+        void NavigationSetup()
+        {
+            Messenger.Default.Register<Navigation.NavigateArgs>(this, (x) =>
+            {
+                MainFrame.Navigate(new Uri(x.Url, UriKind.Relative));
+            });
         }
     }
 }

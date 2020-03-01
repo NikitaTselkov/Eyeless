@@ -6,11 +6,10 @@
         xmlns:local="clr-namespace:eyeless"
         xmlns:VM="clr-namespace:eyeless.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" >
+        Title="MainWindow" Height="450" Width="800" 
+        DataContext="{Binding  Main,Source={StaticResource Locator}}">
 
-    <Window.DataContext>
-        <VM:MainViewModel />
-    </Window.DataContext>
+    
 
     <Grid>
         <Grid.RowDefinitions>
@@ -22,8 +21,7 @@
             <ColumnDefinition Width="191*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel  Style="{StaticResource Hadder}">
-            
+        <StackPanel Style="{StaticResource Hadder}">
 
         </StackPanel>
 
@@ -37,15 +35,15 @@
             </StackPanel>
 
 
-            <Button Tag="Dashboard" Style="{StaticResource MainButton}" />
-            <Button Tag="workout" Style="{StaticResource MainButton}" />
-            <Button Tag="Scheduling" Style="{StaticResource MainButton}" />
-            <Button Tag="Settings" Style="{StaticResource MainButton}" />
+            <Button Tag="Dashboard" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}" />
+            <Button Tag="workout" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}" Command="{Binding GoToGamePage}"/>
+            <Button Tag="Scheduling" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}"/>
+                <Button Tag="Settings" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}" />
         </StackPanel>
 
-        <StackPanel Style="{StaticResource Background}">
-            <Frame x:Name="MainFrame" NavigationUIVisibility="Visible" />
-        </StackPanel>
+        <Grid Style="{StaticResource Background}">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        </Grid>
 
     </Grid>
 </Window>

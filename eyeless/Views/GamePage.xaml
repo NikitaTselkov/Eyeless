@@ -4,11 +4,26 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:eyeless.Views"
+      xmlns:VM="clr-namespace:eyeless.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="GamePage">
 
-    <Grid Background="Beige">
-        
+    <Page.DataContext>
+        <VM:MainViewModel />
+    </Page.DataContext>
+
+    <Grid x:Name="TextBoxGrid" Background="{StaticResource background}">
+        <Viewbox>
+            <StackPanel>
+                <StackPanel>
+                    <Label x:Name="Lab" Content="{Binding Score}" Style="{StaticResource Score}"/>
+                </StackPanel>
+                <StackPanel Margin="130 0 130 0">
+                    <TextBox x:Name="TextBox" Style="{StaticResource mainText}" Text="{Binding TextBoxT}" />
+                    <TextBox x:Name="TextBox1" Style="{StaticResource TextBox2}" Tag="{Binding TextBoxT}" Text="{Binding Test, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" KeyDown="TextBox_KeyDown"/>
+               </StackPanel>
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </Page>
