@@ -15,14 +15,17 @@
 
     <Grid x:Name="TextBoxGrid" Background="{StaticResource background}">
         <Viewbox>
-            <StackPanel>
-                <StackPanel>
-                    <Label x:Name="Lab" Content="{Binding Score}" Style="{StaticResource Score}"/>
+            <StackPanel Height="372" >
+                <StackPanel Margin="40 20 0 0" HorizontalAlignment="Left">
+                    <TextBox Text="{Binding Level}" Style="{StaticResource LevelPanel}" />
                 </StackPanel>
-                <StackPanel Margin="130 0 130 0">
-                    <TextBox x:Name="TextBox" Style="{StaticResource mainText}" Text="{Binding TextBoxT}" />
+                <StackPanel>
+                    <Label x:Name="Lab" Content="{Binding Score, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Score}"/>
+                </StackPanel>
+                <StackPanel Margin="130 110 130 0" >
                     <TextBox x:Name="TextBox1" Style="{StaticResource TextBox2}" Tag="{Binding TextBoxT}" Text="{Binding Test, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" KeyDown="TextBox_KeyDown"/>
-               </StackPanel>
+                    <TextBox x:Name="TextBox" Style="{StaticResource mainText}" Text="{Binding TextBoxT}" />
+                </StackPanel>
             </StackPanel>
         </Viewbox>
     </Grid>

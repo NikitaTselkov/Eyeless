@@ -26,6 +26,7 @@ namespace eyeless.Views
             InitializeComponent();
             TextBox1.Focus();
             Chars = CreateCharArray();
+            Lab.Content = 0;
         }
 
         public char[] Chars { get; set; } 

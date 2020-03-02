@@ -26,4 +26,8 @@
     <Color x:Key="ScoreColor">#81799F</Color>
     <SolidColorBrush  x:Key="ScoreC" Color="{StaticResource ScoreColor}" />
 
+    <Color x:Key="LevelColor">#26242F</Color>
+    <SolidColorBrush  x:Key="LevelC" Color="{StaticResource LevelColor}" />
+    
+    
 </ResourceDictionary>

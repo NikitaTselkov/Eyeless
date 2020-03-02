@@ -11,7 +11,7 @@ namespace eyeless.Models
 
         public string MethodDivide()
         {
-            string name1 = "Array \t Int \t String \t Array \t Int \t String";
+            string name1 = "Array   Int   String   Array   Int   String";
 
             //char[] item = name1.ToCharArray();
             //foreach (var Item in item)

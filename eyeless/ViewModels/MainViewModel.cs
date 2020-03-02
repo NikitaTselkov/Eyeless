@@ -16,9 +16,11 @@ namespace eyeless.ViewModels
 
         public bool IsPressed { get; set; } = true;
 
-        public string TextBoxT { get { return mainModel.MethodDivide(); } set { } } 
+        public string TextBoxT { get { return mainModel.MethodDivide(); } set { } }
 
-        public int Score { get; set; }
+        public int Score { get; set; } 
+
+        public string Level { get; set; } = "Level 90";
 
         public char[] TextChar { get; set; }
      
