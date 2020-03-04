@@ -9,9 +9,9 @@ namespace eyeless.Models
     public class MainModel
     {
 
-        public string MethodDivide()
+        public string Divide()
         {
-            string name1 = "Array   Int   String   Array   Int   String";
+            string name1 = "Array   Int   String   Array   Int   String   Int   String   Array   Int   String   Int   String   Array   Int   String";
 
             //char[] item = name1.ToCharArray();
             //foreach (var Item in item)
@@ -20,6 +20,15 @@ namespace eyeless.Models
             //}
             return name1;
         }
+
+
+        public string LevelControll(int Score, int Level)
+        {
+                Level = Score / 25;
+
+            return $"Level {Level}";
+        }
+
 
     }
 }
