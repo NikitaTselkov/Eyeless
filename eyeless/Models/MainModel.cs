@@ -21,7 +21,6 @@ namespace eyeless.Models
             return name1;
         }
 
-
         public string LevelControll(int Score, int Level)
         {
                 Level = Score / 25;

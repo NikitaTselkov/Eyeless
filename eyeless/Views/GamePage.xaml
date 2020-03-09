@@ -14,19 +14,33 @@
     </Page.DataContext>
 
     <Grid x:Name="TextBoxGrid" Background="{StaticResource background}">
-        <Viewbox>
-            <StackPanel Height="372" >
-                <StackPanel Margin="40 20 0 0" HorizontalAlignment="Left">
-                    <TextBox Text="{Binding Level}" Style="{StaticResource LevelPanel}" />
-                </StackPanel>
-                <StackPanel>
-                    <Label x:Name="Lab" Content="{Binding Score, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Score}"/>
-                </StackPanel>
-                <StackPanel Margin="130 110 130 0" >
-                    <TextBox x:Name="TextBox1" Style="{StaticResource TextBox2}" Tag="{Binding TextBoxT}" Text="{Binding Test, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" KeyDown="TextBox_KeyDown"/>
-                    <TextBox x:Name="TextBox" Style="{StaticResource mainText}" Text="{Binding TextBoxT}" />
-                </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="241*"/>
+            <RowDefinition Height="209*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="277*"/>
+        </Grid.ColumnDefinitions>
+
+        <Viewbox Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" >
+            <StackPanel Margin="20 25 0 0">
+                <TextBox Text="{Binding Level}" Style="{StaticResource LevelPanel}" Margin="20 0"/>
             </StackPanel>
         </Viewbox>
+        <Viewbox  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+            <Grid>
+                <local:PartialCircle Width="200" Height="200" Radius="45" Margin="0 -40 0 0"/>
+                <Label x:Name="Lab" Content="{Binding Score, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Score}"/>
+            </Grid>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel>
+                <TextBox x:Name="TextBox1" Style="{StaticResource TextBox2}" Tag="{Binding TextBoxT}" Text="{Binding Test, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" KeyDown="TextBox_KeyDown"/>
+                <TextBox x:Name="TextBox" Style="{StaticResource mainText}" Text="{Binding TextBoxT}" />
+            </StackPanel>
+        </Viewbox>
+
+
     </Grid>
 </Page>

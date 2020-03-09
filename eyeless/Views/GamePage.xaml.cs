@@ -26,7 +26,7 @@ namespace eyeless.Views
             InitializeComponent();
             TextBox1.Focus();
             Chars = CreateCharArray();
-            Lab.Content = 0;
+            Lab.Content = 0;     
         }
 
         public char[] Chars { get; set; } 
@@ -89,7 +89,5 @@ namespace eyeless.Views
             Console.WriteLine(text);
             return text.ToCharArray();
         }
-        
-
     }
 }

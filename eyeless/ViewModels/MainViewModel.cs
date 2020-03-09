@@ -27,8 +27,6 @@ namespace eyeless.ViewModels
         public string Test { get; set; }
 
 
-
-
         public ICommand GoToGamePage
         {
             get 
