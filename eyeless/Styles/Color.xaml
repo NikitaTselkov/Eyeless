@@ -28,6 +28,12 @@
 
     <Color x:Key="LevelColor">#26242F</Color>
     <SolidColorBrush  x:Key="LevelC" Color="{StaticResource LevelColor}" />
+
+    <Color x:Key="BackgroundGameStopColor">#5A517C</Color>
+    <SolidColorBrush  x:Key="StopBG" Color="{StaticResource BackgroundGameStopColor}" />
+
+    <Color x:Key="ButtonFGameStopColor">#5C5C39</Color>
+    <SolidColorBrush  x:Key="StopFC" Color="{StaticResource ButtonFGameStopColor}" />
     
-    
+
 </ResourceDictionary>

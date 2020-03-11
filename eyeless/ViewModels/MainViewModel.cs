@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -13,8 +13,6 @@ namespace eyeless.ViewModels
     public class MainViewModel : Navigation.NavigateViewModel
     {
         Models.MainModel mainModel = new Models.MainModel();
-
-        public bool IsPressed { get; set; } = true;
 
         public string TextBoxT { get { return mainModel.Divide(); } set { } }
 
@@ -26,6 +24,7 @@ namespace eyeless.ViewModels
      
         public string Test { get; set; }
 
+        public int Time { get; set; }
 
         public ICommand GoToGamePage
         {
@@ -34,8 +33,18 @@ namespace eyeless.ViewModels
                 return new RelayCommand(() =>
                 {
                     Navigate("Views/GamePage.xaml");
-                    IsPressed = false;
-                   
+
+                    ThreadPool.QueueUserWorkItem((o) =>
+                    {
+                        for (int i = 10; i <= 100; i++)
+                        {
+
+                            Time = i;
+
+                            Thread.Sleep(600);
+
+                        }
+                    });
                 });
             }
         }

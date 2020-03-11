@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,7 +27,8 @@ namespace eyeless.Views
             InitializeComponent();
             TextBox1.Focus();
             Chars = CreateCharArray();
-            Lab.Content = 0;     
+            Lab.Content = 0;
+
         }
 
         public char[] Chars { get; set; } 

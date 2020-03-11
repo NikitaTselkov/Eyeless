@@ -156,11 +156,18 @@
     <Compile Include="Views\PartialCircle.xaml.cs">
       <DependentUpon>PartialCircle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StopGame.xaml.cs">
+      <DependentUpon>StopGame.xaml</DependentUpon>
+    </Compile>
     <Page Include="Styles\Color.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\GamePageStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\GameStopStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +200,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\PartialCircle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StopGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

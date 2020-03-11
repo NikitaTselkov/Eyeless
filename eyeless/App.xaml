@@ -15,7 +15,9 @@
             <ResourceDictionary.MergedDictionaries>
 
                 <ResourceDictionary Source="Styles/Color.xaml" />
-                
+
+                <ResourceDictionary Source="Styles/GameStopStyles.xaml" />
+
                 <ResourceDictionary Source="Styles/GamePageStyles.xaml" />
 
                 <ResourceDictionary Source="Styles/MainViewStyles.xaml" />

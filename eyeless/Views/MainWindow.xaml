@@ -35,10 +35,10 @@
             </StackPanel>
 
 
-            <Button Tag="Dashboard" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}" />
-            <Button Tag="workout" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}" Command="{Binding GoToGamePage}"/>
-            <Button Tag="Scheduling" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}"/>
-            <Button Tag="Settings" Style="{StaticResource MainButton}" IsEnabled="{Binding IsPressed}" />
+            <Button Tag="Dashboard" Style="{StaticResource MainButton}" />
+            <Button Tag="workout" Style="{StaticResource MainButton}" Command="{Binding GoToGamePage}"/>
+            <Button Tag="Scheduling" Style="{StaticResource MainButton}" />
+            <Button Tag="Settings" Style="{StaticResource MainButton}" />
         </StackPanel>
 
         <Grid Style="{StaticResource Background}">

@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -44,8 +44,7 @@ namespace eyeless.Views
         public static readonly DependencyProperty PercentageProperty =
    DependencyProperty.Register("Percentage", typeof(double),
            typeof(PartialCircle),
-           new PropertyMetadata(4.6,
-           new PropertyChangedCallback(OnSettingsChanged)));
+           new PropertyMetadata(4.6, new PropertyChangedCallback(OnSettingsChanged)));
 
 
 
@@ -58,9 +57,9 @@ namespace eyeless.Views
 
         }
 
-        /// <summary>
-        /// Задает процент
-        /// </summary>
+            /// <summary>
+            /// Задает процент
+            /// </summary>
         public double Percentage
         {
             get { return (double)GetValue(PercentageProperty); }
