@@ -96,10 +96,17 @@
                             Background="{TemplateBinding Background}"
                             CornerRadius="7">
 
-                        <ContentPresenter
+                        
+                        <DockPanel HorizontalAlignment="Center">
+                            <Label Content="Level" HorizontalAlignment="Right" 
+                            VerticalAlignment="Center" 
+                                   Foreground="{TemplateBinding Foreground}"/>
+                            <ContentPresenter
                             Content="{TemplateBinding Text}"
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center"/>
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </DockPanel>
 
                     </Border>
                 </ControlTemplate>

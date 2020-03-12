@@ -25,12 +25,12 @@
 
         <Viewbox Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" >
             <StackPanel Margin="20 25 0 0">
-                <TextBox Text="{Binding Level}" Style="{StaticResource LevelPanel}" Margin="20 0"/>
+                <TextBox x:Name="LevelLab" Text="{Binding Level}" Style="{StaticResource LevelPanel}" Margin="20 0"/>
             </StackPanel>
         </Viewbox>
         <Viewbox  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
             <Grid>
-                <local:PartialCircle Width="200" Height="200" Radius="45" Margin="0 -40 0 0"/>
+                <local:PartialCircle x:Name="clock" Width="200" Height="200" Radius="45" Margin="0 -40 0 0"/>
                 <Label x:Name="Lab" Content="{Binding Score, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Score}"/>
             </Grid>
         </Viewbox>
@@ -41,7 +41,7 @@
             </StackPanel>
         </Viewbox>
 
-        <local:StopGame  Grid.RowSpan="2" Grid.ColumnSpan="2" Score="{Binding Score}" Time="{Binding Time}" Level="{Binding Level}"/>
+        <local:StopGame  Grid.RowSpan="2" Grid.ColumnSpan="2" Score="{Binding ElementName=Lab, Path=Content}" Time="{Binding ElementName=clock, Path=Percentage}" Level="{Binding ElementName=LevelLab, Path=Text}" />
 
     </Grid>
 </Page>

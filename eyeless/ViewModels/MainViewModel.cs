@@ -18,13 +18,11 @@ namespace eyeless.ViewModels
 
         public int Score { get; set; } 
 
-        public string Level { get { return mainModel.LevelControll(Score, 0); }  set { } }
+        public int Level { get { return mainModel.LevelControll(Score, 0); }  set { } }
 
         public char[] TextChar { get; set; }
      
         public string Test { get; set; }
-
-        public int Time { get; set; }
 
         public ICommand GoToGamePage
         {
@@ -33,18 +31,6 @@ namespace eyeless.ViewModels
                 return new RelayCommand(() =>
                 {
                     Navigate("Views/GamePage.xaml");
-
-                    ThreadPool.QueueUserWorkItem((o) =>
-                    {
-                        for (int i = 10; i <= 100; i++)
-                        {
-
-                            Time = i;
-
-                            Thread.Sleep(600);
-
-                        }
-                    });
                 });
             }
         }

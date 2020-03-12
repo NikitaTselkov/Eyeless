@@ -27,24 +27,24 @@ namespace eyeless.Views
         public static readonly DependencyProperty TimeProperty =
   DependencyProperty.Register("Time", typeof(int),
           typeof(StopGame),
-          new PropertyMetadata(0));
+          new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         public static readonly DependencyProperty LevelProperty =
    DependencyProperty.Register("Level", typeof(int),
            typeof(StopGame),
-           new PropertyMetadata(0));
+          new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         public static readonly DependencyProperty ScoreProperty =
    DependencyProperty.Register("Score", typeof(int),
            typeof(StopGame),
-           new PropertyMetadata(0));
+           new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
 
         public int Level
         {
             get { return (int)GetValue(LevelProperty); }
             set{  SetValue(LevelProperty, value);
-                this.OnPropertyChanged();
+                this.OnPropertyChanged("Level");
             }
         }
 
@@ -52,7 +52,7 @@ namespace eyeless.Views
         {
             get { return (int)GetValue(ScoreProperty); }
             set { SetValue(ScoreProperty, value);
-                this.OnPropertyChanged();
+                this.OnPropertyChanged("Score");
             }
         }
 
@@ -60,7 +60,7 @@ namespace eyeless.Views
         {
             get { return (int)GetValue(TimeProperty); }
             set { SetValue(TimeProperty, value);
-                this.OnPropertyChanged();
+                this.OnPropertyChanged("Time");
             }
         }
 
