@@ -1,0 +1,54 @@
+﻿<Page x:Class="eyeless.Views.StartGame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:eyeless.Views"
+      xmlns:VM="clr-namespace:eyeless.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1920"
+      Title="StartGame">
+
+    <Page.DataContext>
+        <VM:MainViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="476*"/>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="476*"/>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="476*"/>
+            <ColumnDefinition Width="109*"/>
+        </Grid.ColumnDefinitions>
+
+        <Viewbox Grid.Column="1" >
+            <Grid>
+                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonEasy}">
+                    <Image Source="{StaticResource KeyBoard}" />
+                </Button>
+            </Grid>
+        </Viewbox>
+
+        <Viewbox Grid.Column="4" >
+            <Grid>
+                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonMedium}">
+                    <Image Source="{StaticResource TKeyBoard}" />
+                </Button>
+            </Grid>
+        </Viewbox>
+
+        <Viewbox Grid.Column="7" >
+            <Grid>
+                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonHard}">
+                    <Image Source="{StaticResource Clock}" />
+                </Button>
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</Page>

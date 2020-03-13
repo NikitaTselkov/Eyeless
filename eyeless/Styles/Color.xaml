@@ -34,6 +34,14 @@
 
     <Color x:Key="ButtonFGameStopColor">#5C5C39</Color>
     <SolidColorBrush  x:Key="StopFC" Color="{StaticResource ButtonFGameStopColor}" />
-    
+
+    <Color x:Key="ButtonFGameStartGColor">#42A462</Color>
+    <SolidColorBrush  x:Key="EasyC" Color="{StaticResource ButtonFGameStartGColor}" />
+
+    <Color x:Key="ButtonFGameStartYColor">#A48301</Color>
+    <SolidColorBrush  x:Key="MediumC" Color="{StaticResource ButtonFGameStartYColor}" />
+
+    <Color x:Key="ButtonFGameStartRColor">#A43343</Color>
+    <SolidColorBrush  x:Key="HardC" Color="{StaticResource ButtonFGameStartRColor}" />
 
 </ResourceDictionary>

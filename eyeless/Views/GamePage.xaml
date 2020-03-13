@@ -41,7 +41,7 @@
             </StackPanel>
         </Viewbox>
 
-        <local:StopGame  Grid.RowSpan="2" Grid.ColumnSpan="2" Score="{Binding ElementName=Lab, Path=Content}" Time="{Binding ElementName=clock, Path=Percentage}" Level="{Binding ElementName=LevelLab, Path=Text}" />
+        <!--<local:StopGame  Grid.RowSpan="2" Grid.ColumnSpan="2" Score="{Binding ElementName=Lab, Path=Content}" Time="{Binding ElementName=clock, Path=Percentage}" Level="{Binding ElementName=LevelLab, Path=Text}" />-->
 
     </Grid>
 </Page>

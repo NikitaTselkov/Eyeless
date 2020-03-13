@@ -11,10 +11,18 @@
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:eyeless.Navigation" />
 
             <BitmapImage x:Key="Logo" UriSource="Image\Logo.png" />
+            
+            <BitmapImage x:Key="Clock" UriSource="Image\Clock.png" />
+            
+            <BitmapImage x:Key="KeyBoard" UriSource="Image\KeyBoard.png" />
+            
+            <BitmapImage x:Key="TKeyBoard" UriSource="Image\~KeyBoard.png" />
 
             <ResourceDictionary.MergedDictionaries>
 
                 <ResourceDictionary Source="Styles/Color.xaml" />
+                
+                <ResourceDictionary Source="Styles/GameStartStyles.xaml" />
 
                 <ResourceDictionary Source="Styles/GameStopStyles.xaml" />
 

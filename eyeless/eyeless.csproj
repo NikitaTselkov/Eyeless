@@ -156,6 +156,9 @@
     <Compile Include="Views\PartialCircle.xaml.cs">
       <DependentUpon>PartialCircle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StartGame.xaml.cs">
+      <DependentUpon>StartGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StopGame.xaml.cs">
       <DependentUpon>StopGame.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\GamePageStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\GameStartStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,6 +210,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\StartGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StopGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,9 +246,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Clock.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\KeyBoard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\~KeyBoard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.1.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.1.0\build\Fody.targets')" />

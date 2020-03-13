@@ -24,9 +24,20 @@ namespace eyeless.ViewModels
      
         public string Test { get; set; }
 
-        public ICommand GoToGamePage
+        public ICommand GoToStartPage
         {
             get 
+            {
+                return new RelayCommand(() =>
+                {
+                    Navigate("Views/StartGame.xaml");
+                });
+            }
+        }
+
+        public ICommand GoToGamePage
+        {
+            get
             {
                 return new RelayCommand(() =>
                 {

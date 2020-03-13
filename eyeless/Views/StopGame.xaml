@@ -9,62 +9,66 @@
              MaxHeight="630" MaxWidth="1010">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="55*"/>
-            <ColumnDefinition Width="300*"/>
-            <ColumnDefinition Width="300*"/>
-            <ColumnDefinition Width="300*"/>
-            <ColumnDefinition Width="55*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="55*"/>
-            <RowDefinition Height="326*"/>
-            <RowDefinition Height="195*"/>
-            <RowDefinition Height="55*"/>
-        </Grid.RowDefinitions>
+        <Grid Margin="-1000" Background="Black" Opacity="0.7">
+        </Grid>
+        <Grid Opacity="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="55*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="326*"/>
+                <RowDefinition Height="195*"/>
+                <RowDefinition Height="55*"/>
+            </Grid.RowDefinitions>
 
-        <Rectangle Style="{StaticResource RectangleBG2}" Grid.ColumnSpan="5" />
+            <Rectangle Style="{StaticResource RectangleBG2}" Grid.ColumnSpan="5" />
 
-        <Rectangle Style="{StaticResource RectangleBG}" Grid.ColumnSpan="3"/>
+            <Rectangle Style="{StaticResource RectangleBG}" Grid.ColumnSpan="3"/>
 
 
-        <Viewbox Grid.Row="1" Grid.Column="1">
-            <StackPanel Margin="-5" >
-                <Label Content="Score" FontSize="25" HorizontalAlignment="Center" Foreground="{StaticResource ScoreC}" />
+            <Viewbox Grid.Row="1" Grid.Column="1">
+                <StackPanel Margin="-5" >
+                    <Label Content="Score" FontSize="25" HorizontalAlignment="Center" Foreground="{StaticResource ScoreC}" />
+                    <Grid>
+                        <Ellipse Fill="{StaticResource hadder}" Width="100" Height="100" />
+                        <Label Content="{Binding Score}" Style="{StaticResource ReturnValue}" />
+                    </Grid>
+
+                </StackPanel>
+            </Viewbox>
+
+            <Viewbox Grid.Row="1" Grid.Column="2">
+                <StackPanel Margin="-5" >
+                    <Label Content="Time" FontSize="25" HorizontalAlignment="Center" Foreground="{StaticResource ScoreC}" />
+                    <Grid>
+                        <Ellipse Fill="{StaticResource hadder}" Width="100" Height="100" />
+                        <Label Content="{Binding Time}" Style="{StaticResource ReturnValue}" />
+                    </Grid>
+
+                </StackPanel>
+            </Viewbox>
+
+            <Viewbox Grid.Row="1" Grid.Column="3">
+                <StackPanel Margin="-5" >
+                    <Label Content="Level" FontSize="25" HorizontalAlignment="Center" Foreground="{StaticResource ScoreC}" />
+                    <Grid>
+                        <Ellipse Fill="{StaticResource hadder}" Width="100" Height="100" />
+                        <Label Content="{Binding Level}" Style="{StaticResource ReturnValue}" FontSize="60" />
+                    </Grid>
+
+                </StackPanel>
+            </Viewbox>
+
+            <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" >
                 <Grid>
-                    <Ellipse Fill="{StaticResource hadder}" Width="100" Height="100" />
-                    <Label Content="{Binding Score}" Style="{StaticResource ReturnValue}" />
+                    <Button Style="{StaticResource ButtonContinue}" Content="continue"/>
                 </Grid>
-
-            </StackPanel>
-        </Viewbox>
-
-        <Viewbox Grid.Row="1" Grid.Column="2">
-            <StackPanel Margin="-5" >
-                <Label Content="Time" FontSize="25" HorizontalAlignment="Center" Foreground="{StaticResource ScoreC}" />
-                <Grid>
-                    <Ellipse Fill="{StaticResource hadder}" Width="100" Height="100" />
-                    <Label Content="{Binding Time}" Style="{StaticResource ReturnValue}" />
-                </Grid>
-
-            </StackPanel>
-        </Viewbox>
-
-        <Viewbox Grid.Row="1" Grid.Column="3">
-            <StackPanel Margin="-5" >
-                <Label Content="Level" FontSize="25" HorizontalAlignment="Center" Foreground="{StaticResource ScoreC}" />
-                <Grid>
-                    <Ellipse Fill="{StaticResource hadder}" Width="100" Height="100" />
-                    <Label Content="{Binding Level}" Style="{StaticResource ReturnValue}" FontSize="60" />
-                </Grid>
-
-            </StackPanel>
-        </Viewbox>
-
-        <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" >
-            <Grid>
-                <Button Style="{StaticResource ButtonContinue}" Content="continue"/>
-            </Grid>
-        </Viewbox>
+            </Viewbox>
+        </Grid>
     </Grid>
 </UserControl>
