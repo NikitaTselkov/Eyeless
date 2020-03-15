@@ -66,7 +66,7 @@
 
             <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" >
                 <Grid>
-                    <Button Style="{StaticResource ButtonContinue}" Content="continue"/>
+                    <Button x:Name="Continue" Style="{StaticResource ButtonContinue}" Content="continue"/>
                 </Grid>
             </Viewbox>
         </Grid>

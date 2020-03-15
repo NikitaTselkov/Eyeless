@@ -153,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\RelayCommand.cs" />
+    <Compile Include="Views\EasyGamePage.xaml.cs">
+      <DependentUpon>EasyGamePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PartialCircle.xaml.cs">
       <DependentUpon>PartialCircle.xaml</DependentUpon>
     </Compile>
@@ -182,7 +186,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GamePage.xaml">
+    <Page Include="Views\EasyGamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MediumGamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,8 +207,8 @@
     <Compile Include="Navigation\NavigateViewModel.cs" />
     <Compile Include="Navigation\ViewModelLocator.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="Views\GamePage.xaml.cs">
-      <DependentUpon>GamePage.xaml</DependentUpon>
+    <Compile Include="Views\MediumGamePage.xaml.cs">
+      <DependentUpon>MediumGamePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

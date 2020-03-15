@@ -28,7 +28,7 @@
 
         <Viewbox Grid.Column="1" >
             <Grid>
-                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonEasy}">
+                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonEasy}" CommandParameter="Easy">
                     <Image Source="{StaticResource KeyBoard}" />
                 </Button>
             </Grid>
@@ -36,7 +36,7 @@
 
         <Viewbox Grid.Column="4" >
             <Grid>
-                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonMedium}">
+                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonMedium}" CommandParameter="Medium">
                     <Image Source="{StaticResource TKeyBoard}" />
                 </Button>
             </Grid>
@@ -44,7 +44,7 @@
 
         <Viewbox Grid.Column="7" >
             <Grid>
-                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonHard}">
+                <Button Command="{Binding GoToGamePage}" Style="{StaticResource SelectionButtonHard}" CommandParameter="Hard">
                     <Image Source="{StaticResource Clock}" />
                 </Button>
             </Grid>

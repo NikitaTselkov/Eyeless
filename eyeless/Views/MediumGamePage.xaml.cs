@@ -20,15 +20,16 @@ namespace eyeless.Views
     /// <summary>
     /// Логика взаимодействия для GamePage.xaml
     /// </summary>
-    public partial class GamePage : Page
+    public partial class MediumGamePage : Page
     {
-        public GamePage()
+        public MediumGamePage()
         {
             InitializeComponent();
             TextBox1.Focus();
-            Chars = CreateCharArray();
             Lab.Content = 0;
-
+            MainTextBox.Text = MainTextTest();
+            Chars = CreateCharArray();
+            
         }
 
         public char[] Chars { get; set; } 
@@ -39,13 +40,18 @@ namespace eyeless.Views
         {
             Number += 1;
 
-            var BrushConverter = new BrushConverter();
-
-
-            if (Chars.Length > Number - 1)
+            if (clock.Percentage == 100 || Chars.Length <= Number)
             {
+                Stop.Continue.Focus();
+                Stop.Visibility = Visibility.Visible;
 
-                if (TextBox.Text.IndexOf(' ') - 1 == 0)
+            }
+            else
+            { 
+                 
+
+                 var BrushConverter = new BrushConverter();
+                if (MainTextBox.Text.IndexOf(' ') - 1 == 0)
                 {
                     Delet(3);
                 }
@@ -54,42 +60,52 @@ namespace eyeless.Views
                 {
 
                     Delet(1);
-                    TextBox.Foreground = BrushConverter.ConvertFrom("#5B5B3A") as Brush;
+                    MainTextBox.Foreground = BrushConverter.ConvertFrom("#5B5B3A") as Brush;
 
                     ScoreControll(1);
 
                     Console.WriteLine(e.Key.ToString());
                 }
-                else 
+                else
                 {
 
-                    TextBox.Foreground = BrushConverter.ConvertFrom("#3B2D13") as Brush;
+                    MainTextBox.Foreground = BrushConverter.ConvertFrom("#3B2D13") as Brush;
                     Delet(1);
                     ScoreControll(-2);
                 }
+
             }
         }
 
         private void ScoreControll(int Add)
         {
-            Lab.Content = Convert.ToInt32(Lab.Content) + Add;
+            Lab.Content = Convert.ToInt32(Lab.Content) + Add * 2;
         }
 
         private void Delet(int count)
         {
-            if (TextBox.Text != string.Empty) 
+            if (MainTextBox.Text != string.Empty) 
             {
-                TextBox.Text = TextBox.Text.Remove(0, count);
+                MainTextBox.Text = MainTextBox.Text.Remove(0, count);
             }
         }
 
         private char[] CreateCharArray()
         {
-            var text = TextBox.Text.ToString().ToUpper();
+            var text = MainTextBox.Text.ToString().ToUpper();
             text = text.Replace("\t", string.Empty);
             text = text.Replace(" ", string.Empty);
             Console.WriteLine(text);
             return text.ToCharArray();
+        }
+
+        public string MainTextTest()
+        {
+            string name1 = "Array   Int   String   Text   Void   Console   Return   Empty   ToUpper" +
+                "   Char   Private   Count   If   Else   Switch   Enum   List   New   Object   Sender   Foreground   " +
+                "Key   Styles   Navigation   Config";
+
+            return name1;
         }
     }
 }

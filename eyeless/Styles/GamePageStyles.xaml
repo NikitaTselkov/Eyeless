@@ -14,6 +14,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Text" Value="{x:Null}" />
         <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="FontFamily" Value="MS Shell Dlg 2" />
         <Setter Property="FontSize" Value="30" />
         <Setter Property="Visibility" Value="Visible" />
         <Setter Property="Margin" Value="125 0 120 125" />
