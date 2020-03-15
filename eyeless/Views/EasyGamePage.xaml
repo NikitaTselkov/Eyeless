@@ -15,12 +15,14 @@
 
     <Grid x:Name="TextBoxGrid" Background="{StaticResource background}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="241*"/>
-            <RowDefinition Height="209*"/>
+            <RowDefinition Height="139*"/>
+            <RowDefinition Height="108*"/>
+            <RowDefinition Height="203*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="123*"/>
-            <ColumnDefinition Width="277*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="244*"/>
         </Grid.ColumnDefinitions>
 
         <Viewbox Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" >
@@ -28,20 +30,25 @@
                 <TextBox x:Name="LevelLab" Text="{Binding Level}" Style="{StaticResource LevelPanel}" Margin="20 0"/>
             </StackPanel>
         </Viewbox>
-        <Viewbox  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+        <Viewbox  Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Width="298">
             <Grid>
-                <local:PartialCircle x:Name="clock" Width="200" Height="200" Radius="45" Margin="0 -40 0 0"/>
-                <Label x:Name="Lab" Content="{Binding Score, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Score}"/>
+                <local:PartialCircle x:Name="clock" Width="100" Height="100" Radius="45" Margin="0" />
+                <Label x:Name="Lab" Content="{Binding Score, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Score}" Margin="0 0 0 5"/>
             </Grid>
         </Viewbox>
-        <Viewbox Grid.Row="1" Grid.ColumnSpan="2">
-            <StackPanel>
+        <Viewbox Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2">
+            <StackPanel Margin="0">
+                <TextBox x:Name="MainTextBox" Style="{StaticResource mainText}" Text="{Binding TextBoxT}" />
                 <TextBox x:Name="TextBox1" Style="{StaticResource TextBox2}" Tag="{Binding TextBoxT}" Text="{Binding Test, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" KeyDown="TextBox_KeyDown"/>
-                <TextBox x:Name="TextBox" Style="{StaticResource mainText}" Text="{Binding TextBoxT}" />
             </StackPanel>
         </Viewbox>
 
-        <!--<local:StopGame  Grid.RowSpan="2" Grid.ColumnSpan="2" Score="{Binding ElementName=Lab, Path=Content}" Time="{Binding ElementName=clock, Path=Percentage}" Level="{Binding ElementName=LevelLab, Path=Text}" />-->
+        <Viewbox Grid.ColumnSpan="3" Grid.Row="3">
+            <Grid>
+                <local:MyCKeyBoard x:Name="KeyBoard1" />
+            </Grid>
+        </Viewbox>
+        <local:StopGame x:Name="Stop" Grid.RowSpan="3" Grid.ColumnSpan="3" Score="{Binding ElementName=Lab, Path=Content}" Time="{Binding ElementName=clock, Path=Percentage}" Level="{Binding ElementName=LevelLab, Path=Text}" Visibility="Collapsed" />
 
     </Grid>
 </Page>

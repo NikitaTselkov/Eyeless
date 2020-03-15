@@ -38,7 +38,7 @@
                                 TextAlignment="{TemplateBinding TextAlignment}"
                                 Visibility="Visible"
                                 HorizontalAlignment="Left"
-                                Margin="20 0 0 0"
+                                Margin="20 5 0 5"
                             />
                     </Border>
 
@@ -110,6 +110,43 @@
                         </DockPanel>
 
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MyKeyBoard" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource background}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Margin" Value="1" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="MainBG" BorderBrush="{StaticResource hadder}"
+                            BorderThickness="2"
+                            CornerRadius="12"
+                            >
+                        <Grid>
+                            <Border BorderBrush="White"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                                    Opacity="0.2">
+                            </Border>
+
+                            <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                />
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="MainBG" Property="Background" Value="{StaticResource ScoreC}" />
+                            <Setter Property="Foreground" Value="{StaticResource hadder}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

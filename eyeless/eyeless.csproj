@@ -157,6 +157,9 @@
     <Compile Include="Views\EasyGamePage.xaml.cs">
       <DependentUpon>EasyGamePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MyCKeyBoard.xaml.cs">
+      <DependentUpon>MyCKeyBoard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PartialCircle.xaml.cs">
       <DependentUpon>PartialCircle.xaml</DependentUpon>
     </Compile>
@@ -214,6 +217,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\MyCKeyBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PartialCircle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

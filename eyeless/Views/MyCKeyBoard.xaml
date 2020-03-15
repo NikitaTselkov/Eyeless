@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="eyeless.Views.MyCKeyBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eyeless.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1100">
+
+    <StackPanel>
+        
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="250 0">
+            <Button x:Name="Q"  Height="50" Width="50" Content="Q" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="W"  Height="50" Width="50" Content="W" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="E"  Height="50" Width="50" Content="E" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="R"  Height="50" Width="50" Content="R" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="T"  Height="50" Width="50" Content="T" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="Y"  Height="50" Width="50" Content="Y" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="U"  Height="50" Width="50" Content="U" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="I"  Height="50" Width="50" Content="I" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="O"  Height="50" Width="50" Content="O" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="P"  Height="50" Width="50" Content="P" Style="{StaticResource MyKeyBoard}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="250 0">
+            <Button x:Name="A"  Height="50" Width="50" Content="A" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="S"  Height="50" Width="50" Content="S" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="D"  Height="50" Width="50" Content="D" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="F"  Height="50" Width="50" Content="F" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="G"  Height="50" Width="50" Content="G" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="H"  Height="50" Width="50" Content="H" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="J"  Height="50" Width="50" Content="J" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="K"  Height="50" Width="50" Content="K" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="L"  Height="50" Width="50" Content="L" Style="{StaticResource MyKeyBoard}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="250 0">
+            <Button x:Name="Z"  Height="50" Width="50" Content="Z" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="X"  Height="50" Width="50" Content="X" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="C"  Height="50" Width="50" Content="C" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="V"  Height="50" Width="50" Content="V" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="B"  Height="50" Width="50" Content="B" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="N"  Height="50" Width="50" Content="N" Style="{StaticResource MyKeyBoard}" />
+            <Button x:Name="M" Height="50" Width="50" Content="M" Style="{StaticResource MyKeyBoard}" />
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>
