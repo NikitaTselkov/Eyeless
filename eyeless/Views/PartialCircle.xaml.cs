@@ -18,9 +18,6 @@ namespace eyeless.Views
     {
         private double radius = 100;
 
-        //private double percentage = 60;
-
-
         public PartialCircle()
         {
             this.InitializeComponent();
@@ -28,6 +25,8 @@ namespace eyeless.Views
 
             ThreadPool.QueueUserWorkItem((o) =>
             {
+                var _speed = 0;
+                this.Dispatcher.Invoke(new Action(() => _speed = Speed));
                 for (int i = 0; i <= 100; i++)
                 {
                     this.Dispatcher.BeginInvoke((Action)(() =>
@@ -36,56 +35,49 @@ namespace eyeless.Views
 
                     }));
 
-                    Thread.Sleep(600);
+                    Thread.Sleep(_speed);
                 }
             });
+
         }
 
+
         public static readonly DependencyProperty PercentageProperty =
-   DependencyProperty.Register("Percentage", typeof(double),
+   DependencyProperty.Register("Percentage", typeof(int),
            typeof(PartialCircle),
-           new PropertyMetadata(4.6, new PropertyChangedCallback(OnSettingsChanged)));
+           new PropertyMetadata(0));
 
+        public static readonly DependencyProperty SpeedProperty =
+   DependencyProperty.Register("Speed", typeof(int),
+           typeof(PartialCircle),
+           new PropertyMetadata(600));
 
+        public static readonly DependencyProperty StrokeThicknessProperty =
+   DependencyProperty.Register("StrokeThickness", typeof(int),
+           typeof(PartialCircle),
+           new PropertyMetadata(3));
 
-        private static void OnSettingsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public int StrokeThickness
         {
-            var control = (PartialCircle)d;
-            var newSettings = (double)e.NewValue;
-            control.Percentage = newSettings;
+            get { return (int)GetValue(StrokeThicknessProperty); }
+            set { SetValue(StrokeThicknessProperty, value); }
+        }
 
 
+        public int Speed
+        {
+            get { return (int)GetValue(SpeedProperty); }
+            set { SetValue(SpeedProperty, value); }
         }
 
             /// <summary>
             /// Задает процент
             /// </summary>
-        public double Percentage
+        public int Percentage
         {
-            get { return (double)GetValue(PercentageProperty); }
-            set
-            {
+            get { return (int)GetValue(PercentageProperty); }
+            set { SetValue(PercentageProperty, value); }
 
-                SetValue(PercentageProperty, value);
-                //this.percentage = value;
-               // this.OnPropertyChanged();
-
-                //this.OnPropertyChanged("Angle");
-                //this.OnPropertyChanged("IsLarge");
-                //this.OnPropertyChanged("EndPoint");
-            }
-
-            //get { return this.percentage; }
-            //set
-            //{
-            //    this.percentage = value;
-            //    this.OnPropertyChanged();
-
-            //    this.OnPropertyChanged("Angle");
-            //    this.OnPropertyChanged("IsLarge");
-            //    this.OnPropertyChanged("EndPoint");
-
-            //}
         }
 
         /// <summary>

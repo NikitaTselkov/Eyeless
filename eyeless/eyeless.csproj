@@ -157,6 +157,12 @@
     <Compile Include="Views\EasyGamePage.xaml.cs">
       <DependentUpon>EasyGamePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GameException.xaml.cs">
+      <DependentUpon>GameException.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HardGamePage.xaml.cs">
+      <DependentUpon>HardGamePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MyCKeyBoard.xaml.cs">
       <DependentUpon>MyCKeyBoard.xaml</DependentUpon>
     </Compile>
@@ -190,6 +196,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EasyGamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameException.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HardGamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -9,7 +9,7 @@
     <Grid x:Name="LayoutRoot">
         <Path StrokeEndLineCap="Round"
             Stroke="{StaticResource ScoreC}"
-            StrokeThickness="3">
+            StrokeThickness="{Binding StrokeThickness}">
             <Path.Data>
                 <PathGeometry>
                     <PathFigure

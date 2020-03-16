@@ -56,7 +56,7 @@ namespace eyeless.ViewModels
                     Navigate("Views/MediumGamePage.xaml");
                     break;
                 case "Hard":
-                   // Navigate("Views/MediumGamePage.xaml");
+                    Navigate("Views/HardGamePage.xaml");
                     break;
             }
             Console.WriteLine($"Clicked: {param as string}");
