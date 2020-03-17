@@ -28,7 +28,7 @@ namespace eyeless.Views
             Lab.Content = 0;
             MainTextBox.Text = MainTextTest();
             Chars = CreateCharArray();
-
+  
         }
 
         private Random rnd = new Random(Guid.NewGuid().ToByteArray().Sum(s => s));
@@ -45,9 +45,13 @@ namespace eyeless.Views
 
                 if (clock.Percentage == 100 || Chars.Length <= Number)
                 {
+                    if(clock.Percentage != 100)
+                    {
+                        clock.Stop = true;
+                    }
                     Stop.Continue.Focus();
                     Stop.Visibility = Visibility.Visible;
-
+                    
                 }
                 else
                 {
@@ -81,6 +85,12 @@ namespace eyeless.Views
                                 {
                                     GException.clock2.Percentage = i;
 
+                                    if (GException.clock2.Percentage == 100)
+                                    {
+                                        GException.Visibility = Visibility.Collapsed;
+                                        fine();
+                                    }
+
                                 }));
 
                                 Thread.Sleep(15);
@@ -101,25 +111,28 @@ namespace eyeless.Views
             }
             else
             {
-                if (GException.letterLabel.Content.ToString() == e.Key.ToString())
+                if (GException.letterLabel.Content.ToString() != e.Key.ToString())
                 {
-                    GException.Visibility = Visibility.Collapsed;
-                    
+                    fine();
                 }
-                else
-                {
-                    Lab.Content = Convert.ToInt32(Lab.Content) - 20;
-                }
+
+                GException.Visibility = Visibility.Collapsed;
+
             }
                     
         }
 
         private string Randomletter(Random random)
         {
-            char[] _letter = { 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M' };
+            char[] _letter = { 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M' };
 
-            return _letter[random.Next(0, 32)].ToString();
+            return _letter[random.Next(0, 25)].ToString();
 
+        }
+
+        private void fine()
+        {
+            Lab.Content = Convert.ToInt32(Lab.Content) - 20;
         }
 
         private void ScoreControll(int Add)

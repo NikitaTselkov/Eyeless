@@ -32,7 +32,7 @@
             <Viewbox Grid.Row="2" Grid.Column="2">
                 <Grid>
                     <Label x:Name="letterLabel" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="{StaticResource fontGame1}" />
-                    <local:PartialCircle x:Name="clock2" Width="100" Height="100" Radius="45" StrokeThickness="4" Speed="15" />
+                    <local:PartialCircle x:Name="clock2" Width="100" Height="100" Radius="45" StrokeThickness="4" Speed="0" />
                 </Grid>
             </Viewbox>
 

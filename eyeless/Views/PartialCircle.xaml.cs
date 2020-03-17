@@ -26,17 +26,25 @@ namespace eyeless.Views
             ThreadPool.QueueUserWorkItem((o) =>
             {
                 var _speed = 0;
+                var _stop = false;
                 this.Dispatcher.Invoke(new Action(() => _speed = Speed));
                 for (int i = 0; i <= 100; i++)
                 {
+                    this.Dispatcher.Invoke(new Action(() => _stop = Stop));
+
+                    if (_stop)
+                    {
+                        break;
+                    }
+
                     this.Dispatcher.BeginInvoke((Action)(() =>
                     {
                         this.Percentage = i;
-
                     }));
 
                     Thread.Sleep(_speed);
                 }
+
             });
 
         }
@@ -57,6 +65,11 @@ namespace eyeless.Views
            typeof(PartialCircle),
            new PropertyMetadata(3));
 
+        public static readonly DependencyProperty StopProperty =
+   DependencyProperty.Register("Stop", typeof(bool),
+           typeof(PartialCircle),
+           new PropertyMetadata(false));
+
         public int StrokeThickness
         {
             get { return (int)GetValue(StrokeThicknessProperty); }
@@ -70,9 +83,15 @@ namespace eyeless.Views
             set { SetValue(SpeedProperty, value); }
         }
 
-            /// <summary>
-            /// Задает процент
-            /// </summary>
+        public bool Stop
+        {
+            get { return (bool)GetValue(StopProperty); }
+            set { SetValue(StopProperty, value); }
+        }
+
+        /// <summary>
+        /// Задает процент
+        /// </summary>
         public int Percentage
         {
             get { return (int)GetValue(PercentageProperty); }

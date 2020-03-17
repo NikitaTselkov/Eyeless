@@ -42,9 +42,13 @@ namespace eyeless.Views
 
             if (clock.Percentage == 100 || Chars.Length <= Number)
             {
+                if (clock.Percentage != 100)
+                {
+                    clock.Stop = true;
+                }
+
                 Stop.Continue.Focus();
                 Stop.Visibility = Visibility.Visible;
-
             }
             else
             { 
