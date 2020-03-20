@@ -153,8 +153,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DashBoard\Activity.xaml.cs">
+      <DependentUpon>Activity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\ActivityControl.xaml.cs">
+      <DependentUpon>ActivityControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\RelayCommand.cs" />
-    <Compile Include="Views\DashBoardPage.xaml.cs">
+    <Compile Include="DashBoard\DashBoardPage.xaml.cs">
       <DependentUpon>DashBoardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EasyGamePage.xaml.cs">
@@ -178,10 +184,22 @@
     <Compile Include="Views\StopGame.xaml.cs">
       <DependentUpon>StopGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TrainingBar.xaml.cs">
+    <Compile Include="DashBoard\TrainingBar.xaml.cs">
       <DependentUpon>TrainingBar.xaml</DependentUpon>
     </Compile>
+    <Page Include="DashBoard\Activity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\ActivityControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Color.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DashBoardStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,7 +219,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DashBoardPage.xaml">
+    <Page Include="DashBoard\DashBoardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -257,7 +275,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TrainingBar.xaml">
+    <Page Include="DashBoard\TrainingBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

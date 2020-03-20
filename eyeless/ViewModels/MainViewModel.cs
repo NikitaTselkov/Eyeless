@@ -49,7 +49,7 @@ namespace eyeless.ViewModels
 
         public void PathToDashBoard(object param)
         {
-            Navigate("Views/DashBoardPage.xaml");
+            Navigate("DashBoard/DashBoardPage.xaml");
         }
 
         public void PathToGamePage(object param)

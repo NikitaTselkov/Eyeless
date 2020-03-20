@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="eyeless.DashBoard.Activity"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eyeless.DashBoard"
+             mc:Ignorable="d" 
+             d:DesignHeight="510" d:DesignWidth="1125">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="208*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="{StaticResource hadder}"
+                   RadiusX="15"
+                   RadiusY="15" 
+                   Width="1125"
+                   Height="510"
+                   Grid.RowSpan="2"
+        />
+
+        <Line X1="80" X2="1045" Y1="415" Y2="415" StrokeThickness="3" Stroke="{StaticResource LineC}" Grid.RowSpan="2" />
+        <Line X1="80" X2="1045" Y1="330" Y2="330" StrokeThickness="3" Stroke="{StaticResource LineC}" Grid.RowSpan="2" />
+        <Line X1="80" X2="1045" Y1="240" Y2="240" StrokeThickness="3" Stroke="{StaticResource LineC}" Grid.RowSpan="2" />
+
+        <StackPanel HorizontalAlignment="Left" Grid.RowSpan="2" Margin="0 70 0 0"  >
+            <Label Content="320" Style="{StaticResource TextInt}" Margin="0 0 0 70" />
+            <Label Content="160" Style="{StaticResource TextInt}"  />
+            <Label Content="80" Style="{StaticResource TextInt}"  />
+            <Label Content="0" Style="{StaticResource TextInt}"  />
+        </StackPanel>
+
+        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.RowSpan="2">
+            <Label Content="Jan" Style="{StaticResource TextMonth}" />
+            <Label Content="Feb" Style="{StaticResource TextMonth}" />
+            <Label Content="Mar" Style="{StaticResource TextMonth}" />
+            <Label Content="Apr" Style="{StaticResource TextMonth}" />
+            <Label Content="Jun" Style="{StaticResource TextMonth}" />
+            <Label Content="Jul" Style="{StaticResource TextMonth}" />
+            <Label Content="Aug" Style="{StaticResource TextMonth}" />
+        </DockPanel>
+
+        <DockPanel VerticalAlignment="Bottom" Grid.Row="0" HorizontalAlignment="Center">
+            <local:ActivityControl Margin="45 0" Score="170" Time="200" Level="180" />
+            <local:ActivityControl Margin="45 0" Score="240" Time="230" Level="210" />
+            <local:ActivityControl Margin="45 0" Score="120" Time="132" Level="110" />
+            <local:ActivityControl Margin="45 0" Score="40" Time="20" Level="30" />
+            <local:ActivityControl Margin="45 0" Score="270" Time="170" Level="250" />
+            <local:ActivityControl Margin="45 0" Score="100" Time="50" Level="92" />
+            <local:ActivityControl Margin="45 0" Score="60" Time="20" Level="65" />
+        </DockPanel>
+        
+        <DockPanel HorizontalAlignment="Center"  Grid.RowSpan="2" >
+
+            <Ellipse Style="{StaticResource Ellipse}" Fill="{StaticResource PincC}" />
+            <Label Content="Score" Style="{StaticResource TextInfo}" />
+
+            <Ellipse Style="{StaticResource Ellipse}" Fill="{StaticResource BlueC}" />
+            <Label Content="Time" Style="{StaticResource TextInfo}" />
+
+            <Ellipse Style="{StaticResource Ellipse}" Fill="{StaticResource purpleС}" />
+            <Label Content="Level" Style="{StaticResource TextInfo}" />
+
+        </DockPanel>
+
+        
+
+    </Grid>
+</UserControl>

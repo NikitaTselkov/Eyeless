@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace eyeless.Views
+namespace eyeless.DashBoard
 {
     /// <summary>
     /// Логика взаимодействия для TrainingBar.xaml

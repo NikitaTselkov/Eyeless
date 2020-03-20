@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="eyeless.DashBoard.ActivityControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eyeless.DashBoard"
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="60">
+    <Grid Height="320">
+        <Line X1="10" Y1="320" X2="10" Y2="{Binding Time}" Stroke="{StaticResource BlueC}" StrokeThickness="5" StrokeEndLineCap="Round" />
+
+        <Line X1="30" Y1="320" X2="30" Y2="{Binding Level}" Stroke="{StaticResource purpleС}" StrokeThickness="5" StrokeEndLineCap="Round" />
+
+        <Line X1="50" Y1="320" X2="50" Y2="{Binding Score}" Stroke="{StaticResource PincC}" StrokeThickness="5" StrokeEndLineCap="Round" />
+    </Grid>
+</UserControl>

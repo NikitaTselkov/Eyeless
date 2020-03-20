@@ -49,5 +49,17 @@
 
     <Color x:Key="WhiteColor">#D6D7DD</Color>
     <SolidColorBrush  x:Key="White" Color="{StaticResource WhiteColor}" />
-   
+
+    <Color x:Key="LineCollor">#3D384C</Color>
+    <SolidColorBrush  x:Key="LineC" Color="{StaticResource LineCollor}" />
+
+    <Color x:Key="Pinc">#EB97CE</Color>
+    <SolidColorBrush  x:Key="PincC" Color="{StaticResource Pinc}" />
+
+    <Color x:Key="purple">#7120EA</Color>
+    <SolidColorBrush  x:Key="purpleС" Color="{StaticResource purple}" />
+
+    <Color x:Key="Blue">#2CB9E6</Color>
+    <SolidColorBrush  x:Key="BlueC" Color="{StaticResource Blue}" />
+    
 </ResourceDictionary>

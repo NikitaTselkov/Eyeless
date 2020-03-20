@@ -29,6 +29,8 @@
                 <ResourceDictionary Source="Styles/GamePageStyles.xaml" />
 
                 <ResourceDictionary Source="Styles/MainViewStyles.xaml" />
+                
+                <ResourceDictionary Source="Styles/DashBoardStyles.xaml" />
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
