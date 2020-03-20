@@ -44,4 +44,10 @@
     <Color x:Key="ButtonFGameStartRColor">#A43343</Color>
     <SolidColorBrush  x:Key="HardC" Color="{StaticResource ButtonFGameStartRColor}" />
 
+    <Color x:Key="GrayColor">#56575D</Color>
+    <SolidColorBrush  x:Key="Gray" Color="{StaticResource GrayColor}" />
+
+    <Color x:Key="WhiteColor">#D6D7DD</Color>
+    <SolidColorBrush  x:Key="White" Color="{StaticResource WhiteColor}" />
+   
 </ResourceDictionary>

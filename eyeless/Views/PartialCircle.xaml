@@ -26,5 +26,26 @@
                 </PathGeometry>
             </Path.Data>
         </Path>
+        <Path x:Name="Ellipse"
+              StrokeEndLineCap="Round"
+              StrokeStartLineCap="Round"
+              Stroke="{StaticResource ScoreC}"
+              StrokeThickness="20"
+              Visibility="{Binding isVisibleEllipse}">
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure
+                        StartPoint="{Binding EndPoint}" >
+                        <ArcSegment
+                            Point="{Binding EndPoint}"
+                            Size="{Binding Size}"
+                            RotationAngle="0"
+                            IsLargeArc="{Binding IsLarge}"
+                            SweepDirection="Clockwise"
+                            />
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
     </Grid>
 </UserControl>

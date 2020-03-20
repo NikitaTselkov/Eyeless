@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="eyeless.Views.TrainingBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eyeless.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Rectangle Fill="{StaticResource hadder}"
+                   RadiusX="15"
+                   RadiusY="15"
+                   Width="380"
+                   Height="380" />
+        
+        <Viewbox>
+            <Grid>
+                <local:PartialCircle x:Name="Circle"
+                                     Radius="70"
+                                     Height="200"
+                                     Width="200"
+                                     StrokeThickness="3"
+                                     Speed="30"
+                                     isVisibleEllipse="Visible"
+                />
+                
+                
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <TextBlock
+                       Foreground="{StaticResource White}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="30">
+                        
+                        <Run Text="{Binding ElementName=Circle, Path=Percentage}" />
+                        <Run Text="%" />
+                        
+                    </TextBlock>
+
+                    <Label Content="Training"
+                       Foreground="{StaticResource Gray}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+                    
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

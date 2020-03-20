@@ -29,8 +29,11 @@ namespace eyeless.ViewModels
 
         public RelayCommand GoToGamePage { get; set; }
 
+        public RelayCommand GoToDashBoardPage { get; set; }
+
         public MainViewModel()
         {
+            GoToDashBoardPage = new RelayCommand(PathToDashBoard);
 
             GoToStartPage = new RelayCommand(PathToStartPage);
 
@@ -42,6 +45,11 @@ namespace eyeless.ViewModels
         public void PathToStartPage(object param)
         {
             Navigate("Views/StartGame.xaml");
+        }
+
+        public void PathToDashBoard(object param)
+        {
+            Navigate("Views/DashBoardPage.xaml");
         }
 
         public void PathToGamePage(object param)

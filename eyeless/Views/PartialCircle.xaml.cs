@@ -70,6 +70,11 @@ namespace eyeless.Views
            typeof(PartialCircle),
            new PropertyMetadata(false));
 
+        public static readonly DependencyProperty VisibleProperty =
+   DependencyProperty.Register("isVisibleEllipse", typeof(Visibility),
+           typeof(PartialCircle),
+           new PropertyMetadata(Visibility.Collapsed));
+
         public int StrokeThickness
         {
             get { return (int)GetValue(StrokeThicknessProperty); }
@@ -96,6 +101,13 @@ namespace eyeless.Views
         {
             get { return (int)GetValue(PercentageProperty); }
             set { SetValue(PercentageProperty, value); }
+
+        }
+
+        public Visibility isVisibleEllipse
+        {
+            get { return (Visibility)GetValue(VisibleProperty); }
+            set { SetValue(VisibleProperty, value); }
 
         }
 
@@ -150,7 +162,7 @@ namespace eyeless.Views
         {
             get
             {
-                return new Size(this.radius, this.radius);
+                return new Size(this.radius , this.radius );
             }
         }
 

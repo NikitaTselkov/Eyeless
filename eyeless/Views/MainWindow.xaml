@@ -35,7 +35,7 @@
             </StackPanel>
 
 
-            <Button Tag="Dashboard" Style="{StaticResource MainButton}" />
+            <Button Tag="Dashboard" Style="{StaticResource MainButton}" Command="{Binding GoToDashBoardPage}" />
             <Button Tag="workout" Style="{StaticResource MainButton}" Command="{Binding GoToStartPage}" />
             <Button Tag="Scheduling" Style="{StaticResource MainButton}" />
             <Button Tag="Settings" Style="{StaticResource MainButton}" />

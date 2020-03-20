@@ -154,6 +154,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\RelayCommand.cs" />
+    <Compile Include="Views\DashBoardPage.xaml.cs">
+      <DependentUpon>DashBoardPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EasyGamePage.xaml.cs">
       <DependentUpon>EasyGamePage.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,9 @@
     <Compile Include="Views\StopGame.xaml.cs">
       <DependentUpon>StopGame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TrainingBar.xaml.cs">
+      <DependentUpon>TrainingBar.xaml</DependentUpon>
+    </Compile>
     <Page Include="Styles\Color.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\MainViewStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashBoardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,6 +254,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StopGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TrainingBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
