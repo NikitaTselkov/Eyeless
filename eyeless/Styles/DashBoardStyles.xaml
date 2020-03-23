@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:eyeless.Styles">
+                    xmlns:local="clr-namespace:eyeless.Styles"
+                    xmlns:databinding1="clr-namespace:eyeless.Models">
 
+    
     <Style x:Key="TextInt" TargetType="Label">
         <Setter Property="Foreground" Value="{StaticResource Gray}" />
         <Setter Property="FontSize" Value="35" />
@@ -27,5 +29,225 @@
         <Setter Property="Margin" Value="0 45" />
         <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
+
+    <Style x:Key="LineStyle" TargetType="Line">
+        <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="Stroke" Value="{StaticResource LineC}" />
+        <Setter Property="StrokeEndLineCap" Value="Round" />
+        <Setter Property="StrokeStartLineCap" Value="Square" />
+    </Style>
+
+    <Style x:Key="LineConect" TargetType="Line">
+        <Setter Property="Stroke" Value="{StaticResource ScoreC}" />
+        <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="StrokeEndLineCap" Value="Round" />
+        <Setter Property="StrokeStartLineCap" Value="Round" />
+    </Style>
+
+    <Style x:Key="EllipseW" TargetType="Line">
+        <Setter Property="StrokeThickness" Value="30" />
+        <Setter Property="Stroke" Value="{StaticResource White}" />
+        <Setter Property="StrokeEndLineCap" Value="Round" />
+        <Setter Property="StrokeStartLineCap" Value="Round" />
+    </Style>
+
+    <Style x:Key="GridSlider" TargetType="Grid">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Height" Value="150" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0 0 -300 200" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=ScrollMenu, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0 0 -300 200" To="0 0 30 200" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0 0 30 200" To="0 0 -300 200" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ScrollMenu" TargetType="Rectangle">
+        <Setter Property="Fill" Value="{StaticResource LineC}" />
+        <Setter Property="Height" Value="150" />
+        <Setter Property="Width" Value="200" />
+        <Setter Property="RadiusX" Value="15" />
+        <Setter Property="RadiusY" Value="15" />
+    </Style>
+
+    <Style x:Key="ButtonExpander" TargetType="Button">
+        <Setter Property="Width" Value="60" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Margin" Value="10 10" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Background="{TemplateBinding Background}"/>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border
+          Name="Border"
+          Margin="1"
+          CornerRadius="2"
+          Background="{StaticResource LineC}"
+          BorderBrush="{StaticResource hadder}"
+          BorderThickness="1">
+                        <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource hadder}"
+            Data="{Binding Path=Content,
+                RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background"
+                                Value="Red" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground"
+                                Value="Red"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- SrollViewer ScrollBar Repeat Buttons (The part in the middle, 
+             not the thumb the long area between the buttons ) -->
+    <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- ScrollViewer ScrollBar Thumb, that part that can be dragged
+            up/down or left/right Buttons -->
+    <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border
+                        
+          CornerRadius="2"
+          Background="{TemplateBinding Background}"
+          BorderBrush="{TemplateBinding BorderBrush}"
+          BorderThickness="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="HorizontalScrollBar"
+            TargetType="{x:Type ScrollBar}">
+        <Grid >
+            <!--{StaticResource LineC}-->
+            <Border
+      CornerRadius="20"
+      Background="Transparent" />
+
+            <Track
+      Name="PART_Track"
+      IsDirectionReversed="False">
+                <Track.Thumb>
+                    <Thumb
+          Style="{StaticResource ScrollBarThumb}"
+          Margin="0"
+          Background="{StaticResource ScoreC}"
+          BorderBrush="{StaticResource ScoreC}"/>
+                </Track.Thumb>
+            </Track>
+
+        </Grid>
+    </ControlTemplate>
+    
+    <!-- Style for overall  ScrollBar -->
+    <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Width" Value="auto"/>
+                <Setter Property="Height" Value="30" />
+                <Setter Property="Template"
+                        Value="{StaticResource HorizontalScrollBar}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Style for overall  ScrollViewer -->
+    <Style x:Key="FavsScrollViewer" TargetType="{x:Type ScrollViewer}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ScrollContentPresenter Grid.ColumnSpan="3"/>
+
+                        <!--{TemplateBinding ViewportWidth}-->
+                        <!---->
+                        
+                        <ScrollBar Name="PART_HorizontalScrollBar"
+            Orientation="Horizontal"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Value="{TemplateBinding HorizontalOffset}" 
+            Maximum="{TemplateBinding ScrollableWidth}"
+            ViewportSize="{Binding ElementName=Slider1, Path=Value}"
+            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
 
 </ResourceDictionary>

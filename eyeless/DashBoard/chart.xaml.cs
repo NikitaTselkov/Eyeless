@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace eyeless.DashBoard
 {
     /// <summary>
-    /// Логика взаимодействия для activity.xaml
+    /// Логика взаимодействия для chart.xaml
     /// </summary>
-    public partial class Activity : UserControl
+    public partial class chart : UserControl
     {
-        public Activity()
+        public chart()
         {
             InitializeComponent();
-            
         }
-
-        
     }
 }

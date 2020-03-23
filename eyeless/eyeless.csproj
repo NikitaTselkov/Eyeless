@@ -159,6 +159,12 @@
     <Compile Include="DashBoard\ActivityControl.xaml.cs">
       <DependentUpon>ActivityControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard\chart.xaml.cs">
+      <DependentUpon>chart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\ChartControl.xaml.cs">
+      <DependentUpon>ChartControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\RelayCommand.cs" />
     <Compile Include="DashBoard\DashBoardPage.xaml.cs">
       <DependentUpon>DashBoardPage.xaml</DependentUpon>
@@ -192,6 +198,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DashBoard\ActivityControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\ChartControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

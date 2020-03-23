@@ -42,13 +42,13 @@
         </DockPanel>
 
         <DockPanel VerticalAlignment="Bottom" Grid.Row="0" HorizontalAlignment="Center">
-            <local:ActivityControl Margin="45 0" Score="170" Time="200" Level="180" />
-            <local:ActivityControl Margin="45 0" Score="240" Time="230" Level="210" />
-            <local:ActivityControl Margin="45 0" Score="120" Time="132" Level="110" />
-            <local:ActivityControl Margin="45 0" Score="40" Time="20" Level="30" />
-            <local:ActivityControl Margin="45 0" Score="270" Time="170" Level="250" />
-            <local:ActivityControl Margin="45 0" Score="100" Time="50" Level="92" />
-            <local:ActivityControl Margin="45 0" Score="60" Time="20" Level="65" />
+            <local:ActivityControl x:Name="S1" Margin="45 0" Score="170" Time="200" Level="180" />
+            <local:ActivityControl x:Name="S2" Margin="45 0" Score="240" Time="230" Level="210" />
+            <local:ActivityControl x:Name="S3" Margin="45 0" Score="120" Time="132" Level="110" />
+            <local:ActivityControl x:Name="S4" Margin="45 0" Score="40" Time="20" Level="30" />
+            <local:ActivityControl x:Name="S5" Margin="45 0" Score="270" Time="170" Level="250" />
+            <local:ActivityControl x:Name="S6" Margin="45 0" Score="100" Time="50" Level="92" />
+            <local:ActivityControl x:Name="S7" Margin="45 0" Score="60" Time="20" Level="65" />
         </DockPanel>
         
         <DockPanel HorizontalAlignment="Center"  Grid.RowSpan="2" >

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Controls;
@@ -41,6 +42,28 @@ namespace eyeless.ViewModels
             
         }
 
+        private bool _IsPressed;
+        public bool IsPressed
+        {
+            get { return _IsPressed; }
+            set
+            {
+                _IsPressed = value;
+            }
+
+        }
+
+        public ICommand PressButton
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    this.IsPressed = mainModel.press(IsPressed);
+                });
+            }
+        }
+
 
         public void PathToStartPage(object param)
         {
@@ -70,6 +93,11 @@ namespace eyeless.ViewModels
             Console.WriteLine($"Clicked: {param as string}");
 
         }
+
+        
+
+
+        
 
     }
 }

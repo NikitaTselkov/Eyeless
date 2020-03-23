@@ -34,6 +34,7 @@ namespace eyeless.DashBoard
                 var _time = 0;
                 var _level = 0;
                 var i = 320;
+                var _stop = false;
 
                 this.Dispatcher.Invoke(new Action(() => _score = 320 - Score));
                 this.Dispatcher.Invoke(new Action(() => _time = 320 - Time));
@@ -43,6 +44,20 @@ namespace eyeless.DashBoard
 
                 while (true)
                 {
+                    try
+                    {
+                        this.Dispatcher.Invoke(new Action(() => _stop = Stop));
+                    }
+                    catch (TaskCanceledException)
+                    { 
+                    
+                    }
+
+                    if (_stop)
+                    {
+                        break;
+                    }
+
                     if (i >= _time)
                     {
                         this.Dispatcher.BeginInvoke((Action)(() =>
@@ -95,6 +110,11 @@ namespace eyeless.DashBoard
            typeof(ActivityControl),
            new PropertyMetadata(0));
 
+        public static readonly DependencyProperty StopProperty =
+   DependencyProperty.Register("Stop", typeof(bool),
+           typeof(ActivityControl),
+           new PropertyMetadata(false));
+
         public int Score
         {
             get { return (int)GetValue(ScoreProperty); }
@@ -113,6 +133,11 @@ namespace eyeless.DashBoard
             set { SetValue(LevelProperty, value); }
         }
 
+        public bool Stop
+        {
+            get { return (bool)GetValue(StopProperty); }
+            set { SetValue(StopProperty, value); }
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -18,5 +18,16 @@ namespace eyeless.Models
             return Level;
         }
 
+        public bool press(bool isPress)
+        {
+            if (isPress == true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

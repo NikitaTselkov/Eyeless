@@ -30,7 +30,14 @@ namespace eyeless.Views
                 this.Dispatcher.Invoke(new Action(() => _speed = Speed));
                 for (int i = 0; i <= 100; i++)
                 {
-                    this.Dispatcher.Invoke(new Action(() => _stop = Stop));
+                    try
+                    {
+                        this.Dispatcher.Invoke(new Action(() => _stop = Stop));
+                    }
+                    catch (TaskCanceledException)
+                    {
+
+                    }
 
                     if (_stop)
                     {

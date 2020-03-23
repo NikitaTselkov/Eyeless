@@ -24,5 +24,17 @@ namespace eyeless.Views
         {
             InitializeComponent();
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Act.S1.Stop = true;
+            Act.S2.Stop = true;
+            Act.S3.Stop = true;
+            Act.S4.Stop = true;
+            Act.S5.Stop = true;
+            Act.S6.Stop = true;
+            Act.S7.Stop = true;
+
+        }
     }
 }
