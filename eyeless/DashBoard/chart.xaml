@@ -23,9 +23,9 @@
         />
         
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 40 10 0">
-            <Label Content="1000" FontSize="30" Foreground="{StaticResource LineC}" Margin="0 40" HorizontalAlignment="Center" />
-            <Label Content="500" FontSize="30" Foreground="{StaticResource LineC}" Margin="0 40" HorizontalAlignment="Center" />
-            <Label Content="100" FontSize="30" Foreground="{StaticResource LineC}" Margin="0 40" HorizontalAlignment="Center" />
+            <Label Content="1000" Style="{StaticResource Label1}" />
+            <Label Content="500" Style="{StaticResource Label1}" />
+            <Label Content="100" Style="{StaticResource Label1}" />
         </StackPanel>
         
         <Line X1="100" X2="1330" Y1="420" Y2="420" StrokeThickness="4" Stroke="{StaticResource LineC}" />

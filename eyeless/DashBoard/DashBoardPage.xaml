@@ -41,13 +41,11 @@
         </Viewbox>
 
         <Viewbox Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="1">
-            <Rectangle Fill="{StaticResource hadder}"
-                       Width="510"
-                       Height="510"
-                       RadiusX="15"
-                       RadiusY="15"
-                       />
+            <DashBoard:TodayProfit />
+        </Viewbox>
 
+        <Viewbox Grid.Row="3" Grid.Column="1">
+            <DashBoard:TimeSpentPerDay />
         </Viewbox>
 
     </Grid>

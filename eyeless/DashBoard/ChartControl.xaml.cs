@@ -72,18 +72,18 @@ namespace eyeless.DashBoard
                     Grid.SetZIndex(line1, 1);
                 }
 
-                oldValueY = ellipse.Y1; 
+                oldValueY = ellipse.Y1;
 
                 //lines.Add(ellipse);
 
                 Grid.Children.Add(ellipse);
                 Grid.SetZIndex(ellipse, 2);
                 Grid.Children.Add(line);
-                
+
 
             }
 
-            
+
         }
 
         public double Myiterator { get; set; }

@@ -37,6 +37,13 @@
         <Setter Property="StrokeStartLineCap" Value="Square" />
     </Style>
 
+    <Style x:Key="Label1" TargetType="Label">
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="Foreground" Value="{StaticResource Gray}" />
+        <Setter Property="Margin" Value="0 40" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
     <Style x:Key="LineConect" TargetType="Line">
         <Setter Property="Stroke" Value="{StaticResource ScoreC}" />
         <Setter Property="StrokeThickness" Value="4" />
@@ -54,6 +61,7 @@
     <Style x:Key="GridSlider" TargetType="Grid">
         <Setter Property="Width" Value="200" />
         <Setter Property="Height" Value="150" />
+        <Setter Property="Opacity" Value="0" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="Margin" Value="0 0 -300 200" />
         <Style.Triggers>
@@ -61,6 +69,7 @@
                 <DataTrigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2" />
                             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0 0 -300 200" To="0 0 30 200" Duration="0:0:0.2" />
                         </Storyboard>
                     </BeginStoryboard>
@@ -68,6 +77,7 @@
                 <DataTrigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.2" />
                             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0 0 30 200" To="0 0 -300 200" Duration="0:0:0.2" />
                         </Storyboard>
                     </BeginStoryboard>
