@@ -185,6 +185,8 @@
     <Compile Include="DashBoard\DashBoardPage.xaml.cs">
       <DependentUpon>DashBoardPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Navigation\NavigateArgs2.cs" />
+    <Compile Include="ViewModels\MainDashBoardViewMoadel.cs" />
     <Compile Include="Views\EasyGamePage.xaml.cs">
       <DependentUpon>EasyGamePage.xaml</DependentUpon>
     </Compile>
@@ -357,6 +359,7 @@
   <ItemGroup>
     <Resource Include="Image\~KeyBoard.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.1.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.1.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

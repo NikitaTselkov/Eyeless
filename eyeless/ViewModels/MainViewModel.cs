@@ -64,6 +64,9 @@ namespace eyeless.ViewModels
             }
         }
 
+       
+
+
 
         public void PathToStartPage(object param)
         {
@@ -90,8 +93,6 @@ namespace eyeless.ViewModels
                     Navigate("Views/HardGamePage.xaml");
                     break;
             }
-            Console.WriteLine($"Clicked: {param as string}");
-
         }
 
         

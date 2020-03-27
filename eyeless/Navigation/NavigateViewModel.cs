@@ -11,7 +11,12 @@ namespace eyeless.Navigation
     {
         public NavigateViewModel()
         {
+            
+        }
 
+        public void SendData(int data, int time, int level)
+        {
+            Messenger.Default.Send<NavigateArgs2>(new NavigateArgs2(data, time, level));
         }
 
         public string Title { get; set; }

@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:eyeless"
         xmlns:VM="clr-namespace:eyeless.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" 
-        DataContext="{Binding  Main,Source={StaticResource Locator}}">
+        Title="Eyeless" Height="450" Width="800" 
+        DataContext="{Binding  Main, Source={StaticResource Locator}}">
 
     
 
@@ -31,7 +31,6 @@
                 <Viewbox>
                     <Image Source="{StaticResource Logo}" />
                 </Viewbox>
-
             </StackPanel>
 
 

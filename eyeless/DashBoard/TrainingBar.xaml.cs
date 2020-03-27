@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DevExpress.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +25,23 @@ namespace eyeless.DashBoard
         public TrainingBar()
         {
             InitializeComponent();
+
+            ThreadPool.QueueUserWorkItem((o) =>
+            {
+                var _percentage = 0;
+                this.Dispatcher.Invoke(new Action(() => _percentage = Convert.ToInt32(HelpLabel.Content) / 18));
+                for (int i = 0; i <= _percentage; i++)
+                {
+                    this.Dispatcher.BeginInvoke((Action)(() =>
+                    {
+                        Circle.Percentage = i;
+                    }));
+
+                    Thread.Sleep(30);
+                }
+
+            });
         }
+
     }
 }

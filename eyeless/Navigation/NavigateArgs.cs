@@ -13,11 +13,14 @@ namespace eyeless.Navigation
 
         }
 
+
         public NavigateArgs(string url)
         {
             Url = url;
         }
 
         public string Url { get; set; }
+
+        
     }
 }

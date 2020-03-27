@@ -46,8 +46,6 @@ namespace eyeless.Views
                 {
                     clock.Stop = true;
                 }
-
-                Stop.Continue.Focus();
                 Stop.Visibility = Visibility.Visible;
             }
             else

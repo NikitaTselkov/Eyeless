@@ -86,6 +86,35 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="GridSlider2" TargetType="Grid">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Height" Value="250" />
+        <Setter Property="Opacity" Value="0" />
+        <Setter Property="Panel.ZIndex" Value="3" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0 0 -300 100" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=ScrollMenu2, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0 0 -300 100" To="0 0 30 100" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.2" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0 0 30 100" To="0 0 -300 100" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
     <Style x:Key="ScrollMenu" TargetType="Rectangle">
         <Setter Property="Fill" Value="{StaticResource LineC}" />
         <Setter Property="Height" Value="150" />

@@ -4,11 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:eyeless.Views"
+             xmlns:VM="clr-namespace:eyeless.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="630" d:DesignWidth="1010"    
              MaxHeight="630" MaxWidth="1010">
 
-    <Grid>
+    <UserControl.DataContext>
+        <VM:MainViewModel />
+    </UserControl.DataContext>
+
+    <Grid x:Name="StopPanel">
         <Grid Margin="-1000" Background="Black" Opacity="0.7">
         </Grid>
         <Grid Opacity="1">
@@ -66,7 +71,7 @@
 
             <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" >
                 <Grid>
-                    <Button x:Name="Continue" Style="{StaticResource ButtonContinue}" Content="continue"/>
+                    <Button x:Name="Continue" Style="{StaticResource ButtonContinue}" Content="continue" Click="Continue_Click" Command="{Binding GoToDashBoardPage}"/>
                 </Grid>
             </Viewbox>
         </Grid>

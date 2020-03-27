@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace eyeless.Views
             InitializeComponent();
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        private void UserControl_UnLoaded(object sender, RoutedEventArgs e)
         {
             Act.S1.Stop = true;
             Act.S2.Stop = true;
@@ -36,5 +37,6 @@ namespace eyeless.Views
             Act.S7.Stop = true;
 
         }
+
     }
 }

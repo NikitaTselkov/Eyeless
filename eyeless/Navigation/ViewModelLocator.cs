@@ -17,6 +17,8 @@ namespace eyeless.Navigation
 
             SimpleIoc.Default.Register<ViewModels.MainViewModel>();
 
+            SimpleIoc.Default.Register<ViewModels.MainDashBoardViewMoadel>();
+
         }
 
         public ViewModels.MainViewModel Main
@@ -24,6 +26,14 @@ namespace eyeless.Navigation
             get
             {
                 return ServiceLocator.Current.GetInstance<ViewModels.MainViewModel>();
+            }
+        }
+
+        public ViewModels.MainDashBoardViewMoadel MainDash
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ViewModels.MainDashBoardViewMoadel>();
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eyeless.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -22,29 +23,30 @@ namespace eyeless.Views
     /// </summary>
     public partial class StopGame : UserControl, INotifyPropertyChanged
     {
+        Navigation.NavigateViewModel NavigateViewModel = new Navigation.NavigateViewModel();
         
 
         public static readonly DependencyProperty TimeProperty =
   DependencyProperty.Register("Time", typeof(int),
           typeof(StopGame),
-          new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+          new FrameworkPropertyMetadata(0));
 
         public static readonly DependencyProperty LevelProperty =
    DependencyProperty.Register("Level", typeof(int),
            typeof(StopGame),
-          new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+          new FrameworkPropertyMetadata(0));
 
         public static readonly DependencyProperty ScoreProperty =
    DependencyProperty.Register("Score", typeof(int),
            typeof(StopGame),
-           new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+           new FrameworkPropertyMetadata(0));
 
 
         public int Level
         {
             get { return (int)GetValue(LevelProperty); }
             set{  SetValue(LevelProperty, value);
-                this.OnPropertyChanged("Level");
+                //this.OnPropertyChanged("Level");
             }
         }
 
@@ -52,7 +54,7 @@ namespace eyeless.Views
         {
             get { return (int)GetValue(ScoreProperty); }
             set { SetValue(ScoreProperty, value);
-                this.OnPropertyChanged("Score");
+               // this.OnPropertyChanged("Score");
             }
         }
 
@@ -60,7 +62,7 @@ namespace eyeless.Views
         {
             get { return (int)GetValue(TimeProperty); }
             set { SetValue(TimeProperty, value);
-                this.OnPropertyChanged("Time");
+               // this.OnPropertyChanged("Time");
             }
         }
 
@@ -68,8 +70,22 @@ namespace eyeless.Views
         {
             InitializeComponent();
             this.DataContext = this;
+            
         }
 
+        public RelayCommand GoToDashBoardPage { get; set; }
+
+        private void Continue_Click(object sender, RoutedEventArgs e)
+        {
+            StopPanel.Visibility = Visibility.Collapsed;
+            NavigateViewModel.SendData(Score, Time, Level);
+            GoToDashBoardPage = new RelayCommand(PathToDashBoard);  
+        }
+
+        private void PathToDashBoard(object param)
+        {
+           NavigateViewModel.Navigate("DashBoard/DashBoardPage.xaml");
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -78,6 +94,5 @@ namespace eyeless.Views
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }
