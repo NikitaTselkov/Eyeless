@@ -55,7 +55,7 @@
                    Margin="15 10"
             />
                     <Label x:Name="TimeLab"
-                   Content="{Binding Time}"
+                   Content="{Binding Time, ValidatesOnExceptions=True, Converter={StaticResource DateTimeToDateConverter}}"
                    FontSize="18"
                    HorizontalAlignment="Right"
                    Foreground="{StaticResource White}"
@@ -130,7 +130,7 @@
             />
 
             <Label x:Name="TimeS"
-                   Content="{Binding TodayTime}"
+                   Content="{Binding TodayTime, ValidatesOnExceptions=True, Converter={StaticResource DateTimeToDateConverter}}"
                    FontSize="60"
                    Foreground="{StaticResource White}"
                    Margin="0 15"

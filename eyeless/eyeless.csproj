@@ -186,6 +186,7 @@
       <DependentUpon>DashBoardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Navigation\NavigateArgs2.cs" />
+    <Compile Include="ViewModels\DateTimeToDateConverter.cs" />
     <Compile Include="ViewModels\MainDashBoardViewMoadel.cs" />
     <Compile Include="Views\EasyGamePage.xaml.cs">
       <DependentUpon>EasyGamePage.xaml</DependentUpon>

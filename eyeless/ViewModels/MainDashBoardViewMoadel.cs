@@ -1,12 +1,5 @@
-﻿
-using DevExpress.Mvvm;
-using System;
-using System.Collections.Generic;
+﻿using DevExpress.Mvvm;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace eyeless.ViewModels
@@ -65,6 +58,28 @@ namespace eyeless.ViewModels
                 return new DelegateCommand(() =>
                 {
                     this.IsPressed2 = mainModel.press(IsPressed2);
+                });
+            }
+        }
+
+        private bool _IsPressed;
+        public bool IsPressed
+        {
+            get { return _IsPressed; }
+            set
+            {
+                _IsPressed = value;
+            }
+
+        }
+
+        public ICommand PressButton
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    this.IsPressed = mainModel.press(IsPressed);
                 });
             }
         }

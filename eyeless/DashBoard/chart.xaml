@@ -6,11 +6,9 @@
              xmlns:local="clr-namespace:eyeless.DashBoard"
              xmlns:local1="clr-namespace:eyeless.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="510" d:DesignWidth="1390">
+             d:DesignHeight="510" d:DesignWidth="1390"
+             DataContext="{Binding MainDash, Source={StaticResource Locator}}">
 
-    <UserControl.DataContext>
-        <local1:MainViewModel />
-    </UserControl.DataContext>
 
     <Grid>
 
@@ -23,8 +21,8 @@
         />
         
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 40 10 0">
-            <Label Content="1000" Style="{StaticResource Label1}" />
-            <Label Content="500" Style="{StaticResource Label1}" />
+            <Label Content="1400" Style="{StaticResource Label1}" />
+            <Label Content="700" Style="{StaticResource Label1}" />
             <Label Content="0" Style="{StaticResource Label1}" />
         </StackPanel>
         
@@ -35,7 +33,7 @@
         <DockPanel Margin="50 50 0 0" Width="200" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Label 
                 x:Name="Score"
-                Content="847"
+                Content="{Binding Score}"
                 Foreground="{StaticResource White}"
                 FontSize="55"
             />

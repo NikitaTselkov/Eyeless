@@ -25,6 +25,9 @@ namespace eyeless
         {
             InitializeComponent();
             NavigationSetup();
+
+            MainFrame.Navigate(new Uri("DashBoard/DashBoardPage.xaml", UriKind.Relative));
+
         }
 
         void NavigationSetup()

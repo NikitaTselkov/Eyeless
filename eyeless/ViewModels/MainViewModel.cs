@@ -42,27 +42,7 @@ namespace eyeless.ViewModels
             
         }
 
-        private bool _IsPressed;
-        public bool IsPressed
-        {
-            get { return _IsPressed; }
-            set
-            {
-                _IsPressed = value;
-            }
-
-        }
-
-        public ICommand PressButton
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    this.IsPressed = mainModel.press(IsPressed);
-                });
-            }
-        }
+       
 
        
 

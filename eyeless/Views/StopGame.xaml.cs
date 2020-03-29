@@ -1,30 +1,25 @@
 ﻿using eyeless.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
+using System.IO;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace eyeless.Views
 {
     /// <summary>
     /// Логика взаимодействия для StopGame.xaml
     /// </summary>
+    [DataContract]
     public partial class StopGame : UserControl, INotifyPropertyChanged
     {
         Navigation.NavigateViewModel NavigateViewModel = new Navigation.NavigateViewModel();
-        
 
         public static readonly DependencyProperty TimeProperty =
   DependencyProperty.Register("Time", typeof(int),
@@ -45,25 +40,20 @@ namespace eyeless.Views
         public int Level
         {
             get { return (int)GetValue(LevelProperty); }
-            set{  SetValue(LevelProperty, value);
-                //this.OnPropertyChanged("Level");
-            }
+            set { SetValue(LevelProperty, value); }
         }
 
+        [DataMember]
         public int Score
         {
             get { return (int)GetValue(ScoreProperty); }
-            set { SetValue(ScoreProperty, value);
-               // this.OnPropertyChanged("Score");
-            }
+            set { SetValue(ScoreProperty, value); }
         }
 
         public int Time
         {
             get { return (int)GetValue(TimeProperty); }
-            set { SetValue(TimeProperty, value);
-               // this.OnPropertyChanged("Time");
-            }
+            set { SetValue(TimeProperty, value); }
         }
 
         public StopGame()
@@ -79,7 +69,37 @@ namespace eyeless.Views
         {
             StopPanel.Visibility = Visibility.Collapsed;
             NavigateViewModel.SendData(Score, Time, Level);
-            GoToDashBoardPage = new RelayCommand(PathToDashBoard);  
+            GoToDashBoardPage = new RelayCommand(PathToDashBoard);
+
+            var jsonFoematter = new DataContractJsonSerializer(typeof(List<int>));
+
+            List<int> Scores = new List<int>();
+
+            if (File.Exists("Score.json"))
+            {
+                using (var file = new FileStream("Score.json", FileMode.Open))
+                {
+                    if (file != null)
+                    {
+                        var values = jsonFoematter.ReadObject(file) as List<int>;
+
+                        if (values != null)
+                        {
+                            foreach (var Item in values)
+                            {
+                                Scores.Add(Item);
+                            }
+                        }
+                    }
+                }
+
+            }
+            Scores.Add(Score);
+
+            using (var file = new FileStream("Score.json", FileMode.OpenOrCreate))
+            {
+                jsonFoematter.WriteObject(file, Scores);
+            }
         }
 
         private void PathToDashBoard(object param)
